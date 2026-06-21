@@ -1,5 +1,17 @@
 {
+  "version": 2,
   "rewrites": [
-    { "source": "/((?!api|assets|.*\\..*).*)", "destination": "/index.html" }
+    {
+      "source": "/api/base44-proxy/:path*",
+      "destination": "/api/base44-proxy"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/api/base44-proxy"
+    },
+    {
+      "source": "/((?!api|assets|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
