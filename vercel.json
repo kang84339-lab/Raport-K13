@@ -1,13 +1,5 @@
 {
-  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/api/base44-proxy/:path*",
-      "destination": "https://api.base44.com/:path*"
-    },
-    {
-      "source": "/((?!api|assets|.*\\..*).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
