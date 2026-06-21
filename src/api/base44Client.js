@@ -7,7 +7,7 @@ export const base44 = createClient({
   appId: appId || "6a37200d642d22d653e74041",
   token: token || "374517ead47a499baf3f4832821386d9",
   functionsVersion,
-  serverUrl: 'https://api.base44.com', // Tulis langsung URL pusatnya di sini
+  serverUrl: '/api/base44-proxy',    // Menggunakan jalur proxy Vercel
   requiresAuth: false,
-  appBaseUrl: 'https://api.base44.com'  // Tulis langsung URL pusatnya di sini
+  appBaseUrl: '/api/base44-proxy'    // Menggunakan jalur proxy Vercel
 });

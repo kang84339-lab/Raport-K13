@@ -1,6 +1,7 @@
 {
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/api/base44-proxy/(.*)", "dest": "https://api.base44.com/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
