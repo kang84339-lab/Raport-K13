@@ -1,15 +1,22 @@
 export default async function handler(req, res) {
-  const path = req.url.replace('/api/base44-proxy', '').replace('/api', '');
+  // Ambil path asli setelah /api/base44-proxy atau /api
+  let path = req.url.replace('/api/base44-proxy', '').replace('/api', '');
+  
+  // Jika path kosong atau hanya '/', pastikan tidak double slash
   const targetUrl = `https://api.base44.com${path}`;
 
+  // Salin semua header dari frontend
   const incomingHeaders = { ...req.headers };
   incomingHeaders['host'] = 'api.base44.com';
   delete incomingHeaders['connection'];
 
+  // Set CORS Headers untuk browser
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+
+  // Handle Preflight Request (OPTIONS) otomatis agar tidak kena CORS
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
     return res.status(200).end();
   }
 
@@ -32,10 +39,6 @@ export default async function handler(req, res) {
     } else {
       data = await response.text();
     }
-
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     return res.status(response.status).json(data);
   } catch (error) {
