@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
   const url = new URL(req.url, 'http://localhost');
-  let path = url.searchParams.get('path') || req.url;
+  const pathFromQuery = url.searchParams.get('path');
+  let path = pathFromQuery || req.url;
 
   if (path.startsWith('/api/base44-proxy')) {
     path = path.replace('/api/base44-proxy', '');
