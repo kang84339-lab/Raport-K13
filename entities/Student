@@ -1,0 +1,137 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "nis": {
+      "type": "string",
+      "description": "Nomor Induk Siswa"
+    },
+    "nisn": {
+      "type": "string",
+      "description": "Nomor Induk Siswa Nasional"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Nama lengkap siswa"
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Nama panggilan"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Laki-laki",
+        "Perempuan"
+      ]
+    },
+    "birth_place": {
+      "type": "string"
+    },
+    "birth_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "religion": {
+      "type": "string",
+      "enum": [
+        "Islam",
+        "Kristen",
+        "Katolik",
+        "Hindu",
+        "Buddha",
+        "Konghucu"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL foto siswa"
+    },
+    "street_address": {
+      "type": "string",
+      "description": "Jalan / RT / RW"
+    },
+    "village": {
+      "type": "string",
+      "description": "Desa / Kelurahan"
+    },
+    "district": {
+      "type": "string",
+      "description": "Kecamatan"
+    },
+    "city": {
+      "type": "string",
+      "description": "Kabupaten / Kota"
+    },
+    "province": {
+      "type": "string",
+      "description": "Provinsi"
+    },
+    "postal_code": {
+      "type": "string",
+      "description": "Kode Pos"
+    },
+    "address": {
+      "type": "string",
+      "description": "Alamat lengkap (legacy/cached)"
+    },
+    "father_name": {
+      "type": "string",
+      "description": "Nama Ayah"
+    },
+    "father_job": {
+      "type": "string",
+      "description": "Pekerjaan Ayah"
+    },
+    "mother_name": {
+      "type": "string",
+      "description": "Nama Ibu"
+    },
+    "mother_job": {
+      "type": "string",
+      "description": "Pekerjaan Ibu"
+    },
+    "guardian_name": {
+      "type": "string",
+      "description": "Nama Wali (jika ada)"
+    },
+    "guardian_job": {
+      "type": "string",
+      "description": "Pekerjaan Wali"
+    },
+    "parent_name": {
+      "type": "string",
+      "description": "Nama orang tua/wali (legacy/cached)"
+    },
+    "class_id": {
+      "type": "string",
+      "description": "ID kelas"
+    },
+    "class_name": {
+      "type": "string",
+      "description": "Nama kelas (cached)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "graduated"
+      ],
+      "default": "active"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Linked user account ID"
+    }
+  },
+  "required": [
+    "nis",
+    "full_name",
+    "gender",
+    "class_id"
+  ]
+}

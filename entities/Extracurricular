@@ -1,0 +1,47 @@
+{
+  "name": "Extracurricular",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "activity_name": {
+      "type": "string",
+      "description": "Nama kegiatan ekstrakurikuler"
+    },
+    "grade": {
+      "type": "string",
+      "enum": [
+        "Sangat Baik",
+        "Baik",
+        "Cukup",
+        "Kurang"
+      ],
+      "description": "Nilai ekskul"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "student_id",
+    "class_id",
+    "activity_name"
+  ]
+}

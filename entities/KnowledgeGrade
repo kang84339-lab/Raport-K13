@@ -1,0 +1,68 @@
+{
+  "name": "KnowledgeGrade",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "nh1": {
+      "type": "number",
+      "description": "Nilai Harian 1"
+    },
+    "nh2": {
+      "type": "number",
+      "description": "Nilai Harian 2"
+    },
+    "nh3": {
+      "type": "number",
+      "description": "Nilai Harian 3"
+    },
+    "uts": {
+      "type": "number",
+      "description": "Nilai UTS"
+    },
+    "uas": {
+      "type": "number",
+      "description": "Nilai UAS"
+    },
+    "final_score": {
+      "type": "number",
+      "description": "Nilai akhir pengetahuan"
+    },
+    "predicate": {
+      "type": "string",
+      "description": "Predikat A/B/C/D"
+    },
+    "description": {
+      "type": "string",
+      "description": "Deskripsi otomatis"
+    }
+  },
+  "required": [
+    "student_id",
+    "subject_id",
+    "class_id"
+  ]
+}

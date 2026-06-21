@@ -1,0 +1,57 @@
+{
+  "name": "MutasiSiswa",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Masuk",
+        "Keluar"
+      ],
+      "description": "Jenis mutasi"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "from_school": {
+      "type": "string",
+      "description": "Asal sekolah (mutasi masuk)"
+    },
+    "to_school": {
+      "type": "string",
+      "description": "Tujuan sekolah (mutasi keluar)"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Alasan mutasi"
+    },
+    "note": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "required": [
+    "student_id",
+    "type",
+    "date"
+  ]
+}

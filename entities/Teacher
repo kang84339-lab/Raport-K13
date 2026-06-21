@@ -1,0 +1,47 @@
+{
+  "name": "Teacher",
+  "type": "object",
+  "properties": {
+    "nip": {
+      "type": "string",
+      "description": "Nomor Induk Pegawai"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Laki-laki",
+        "Perempuan"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Linked user account ID"
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

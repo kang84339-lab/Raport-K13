@@ -1,0 +1,38 @@
+{
+  "name": "Subject",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Kode mapel"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nama mata pelajaran"
+    },
+    "group": {
+      "type": "string",
+      "enum": [
+        "Kelompok A (Umum)",
+        "Kelompok B (Umum)",
+        "Kelompok C (Peminatan)",
+        "Muatan Lokal"
+      ],
+      "description": "Kelompok mapel"
+    },
+    "kkm": {
+      "type": "number",
+      "default": 75,
+      "description": "KKM mata pelajaran"
+    },
+    "order_index": {
+      "type": "number",
+      "default": 0,
+      "description": "Urutan tampilan"
+    }
+  },
+  "required": [
+    "name",
+    "group"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "sick": {
+      "type": "number",
+      "default": 0,
+      "description": "Jumlah hari sakit"
+    },
+    "permitted": {
+      "type": "number",
+      "default": 0,
+      "description": "Jumlah hari izin"
+    },
+    "absent": {
+      "type": "number",
+      "default": 0,
+      "description": "Jumlah hari alpa"
+    }
+  },
+  "required": [
+    "student_id",
+    "class_id"
+  ]
+}

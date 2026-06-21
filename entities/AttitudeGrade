@@ -1,0 +1,55 @@
+{
+  "name": "AttitudeGrade",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "spiritual_grade": {
+      "type": "string",
+      "enum": [
+        "Sangat Baik",
+        "Baik",
+        "Cukup",
+        "Kurang"
+      ],
+      "description": "KI-1 Sikap Spiritual"
+    },
+    "spiritual_description": {
+      "type": "string"
+    },
+    "social_grade": {
+      "type": "string",
+      "enum": [
+        "Sangat Baik",
+        "Baik",
+        "Cukup",
+        "Kurang"
+      ],
+      "description": "KI-2 Sikap Sosial"
+    },
+    "social_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "student_id",
+    "class_id"
+  ]
+}

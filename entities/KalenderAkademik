@@ -1,0 +1,58 @@
+{
+  "name": "KalenderAkademik",
+  "type": "object",
+  "properties": {
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "effective_days": {
+      "type": "number",
+      "description": "Jumlah hari efektif belajar"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "mid_exam_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal mulai UTS/PTS"
+    },
+    "mid_exam_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "final_exam_start": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal mulai UAS/PAT"
+    },
+    "final_exam_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "report_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Tanggal pembagian rapor"
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "academic_year",
+    "semester"
+  ]
+}

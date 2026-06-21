@@ -1,0 +1,67 @@
+{
+  "name": "NilaiTematik",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "ID muatan mapel"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "tema1": {
+      "type": "number"
+    },
+    "tema2": {
+      "type": "number"
+    },
+    "tema3": {
+      "type": "number"
+    },
+    "tema4": {
+      "type": "number"
+    },
+    "tema5": {
+      "type": "number"
+    },
+    "uts": {
+      "type": "number"
+    },
+    "uas": {
+      "type": "number"
+    },
+    "final_score": {
+      "type": "number"
+    },
+    "predicate": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "student_id",
+    "class_id",
+    "subject_id"
+  ]
+}

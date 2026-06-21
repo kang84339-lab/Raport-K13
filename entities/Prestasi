@@ -1,0 +1,68 @@
+{
+  "name": "Prestasi",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Akademik",
+        "Non-Akademik",
+        "Seni",
+        "Olahraga",
+        "Keagamaan",
+        "Lainnya"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "description": "Nama prestasi/penghargaan"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "Sekolah",
+        "Kecamatan",
+        "Kabupaten/Kota",
+        "Provinsi",
+        "Nasional",
+        "Internasional"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "description": "Juara/peringkat"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "organizer": {
+      "type": "string",
+      "description": "Penyelenggara"
+    }
+  },
+  "required": [
+    "student_id",
+    "title",
+    "category"
+  ]
+}

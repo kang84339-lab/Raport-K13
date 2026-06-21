@@ -1,0 +1,53 @@
+{
+  "name": "ClassRoom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nama kelas, e.g. VII-A"
+    },
+    "grade": {
+      "type": "string",
+      "enum": [
+        "VII",
+        "VIII",
+        "IX",
+        "X",
+        "XI",
+        "XII"
+      ],
+      "description": "Tingkat kelas"
+    },
+    "academic_year": {
+      "type": "string",
+      "description": "Tahun ajaran, e.g. 2024/2025"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ],
+      "description": "Semester"
+    },
+    "homeroom_teacher_id": {
+      "type": "string",
+      "description": "ID wali kelas"
+    },
+    "homeroom_teacher_name": {
+      "type": "string",
+      "description": "Nama wali kelas (cached)"
+    },
+    "kkm_default": {
+      "type": "number",
+      "default": 75,
+      "description": "KKM default untuk kelas ini"
+    }
+  },
+  "required": [
+    "name",
+    "grade",
+    "academic_year",
+    "semester"
+  ]
+}

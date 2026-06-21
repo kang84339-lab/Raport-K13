@@ -1,0 +1,38 @@
+{
+  "name": "SchoolInfo",
+  "type": "object",
+  "properties": {
+    "school_name": {
+      "type": "string"
+    },
+    "npsn": {
+      "type": "string",
+      "description": "Nomor Pokok Sekolah Nasional"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "principal_name": {
+      "type": "string",
+      "description": "Nama kepala sekolah"
+    },
+    "principal_nip": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "school_name"
+  ]
+}

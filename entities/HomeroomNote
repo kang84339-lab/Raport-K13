@@ -1,0 +1,37 @@
+{
+  "name": "HomeroomNote",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "academic_year": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    },
+    "note": {
+      "type": "string",
+      "description": "Catatan wali kelas"
+    },
+    "parent_response": {
+      "type": "string",
+      "description": "Tanggapan orang tua"
+    }
+  },
+  "required": [
+    "student_id",
+    "class_id"
+  ]
+}
