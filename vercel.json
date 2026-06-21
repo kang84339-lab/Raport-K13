@@ -1,7 +1,13 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/api/base44-proxy/(.*)", "dest": "https://api.base44.com/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/base44-proxy/:path*",
+      "destination": "https://api.base44.com/:path*"
+    },
+    {
+      "source": "/((?!api|assets|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
