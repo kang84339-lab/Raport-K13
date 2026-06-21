@@ -3,12 +3,12 @@ import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion, appBaseUrl } = appParams;
 
-//Create a client with authentication required
+// Create a client with authentication required
 export const base44 = createClient({
   appId,
   token,
   functionsVersion,
-  serverUrl: '',
+  serverUrl: appBaseUrl || 'https://api.base44.com', // <-- UBAH BAGIAN INI (Jangan dikosongkan)
   requiresAuth: false,
-  appBaseUrl
+  appBaseUrl: appBaseUrl || 'https://api.base44.com' // <-- UBAH JUGA BAGIAN INI untuk memastikan
 });
