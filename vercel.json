@@ -1,10 +1,13 @@
-{
+﻿{
   "version": 2,
   "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/((?!assets|.*\\..*).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/api/apps/(.*)", "destination": "https://api.base44.com/api/apps/$1" },
+    { "source": "/api/app-logs/(.*)", "destination": "https://api.base44.com/api/app-logs/$1" },
+    { "source": "/api/api-logs/(.*)", "destination": "https://api.base44.com/api-logs/$1" },
+    { "source": "/api/(.*)", "destination": "https://api.base44.com/api/$1" },
+    { "source": "/app-logs/(.*)", "destination": "https://api.base44.com/app-logs/$1" },
+    { "source": "/apps/(.*)", "destination": "https://api.base44.com/apps/$1" },
+    { "source": "/((?!assets|.*\\..*).*)", "destination": "/index.html" }
   ]
 }

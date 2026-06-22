@@ -1,14 +1,14 @@
-import { createClient } from '@base44/sdk';
+﻿import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion } = appParams;
-const FIREBASE_URL = 'https://raport-k13-9353a.web.app';
+const SAME_ORIGIN_URL = window.location.origin;
 
 export const base44 = createClient({
   appId,
   token,
   functionsVersion,
-  serverUrl: FIREBASE_URL,
+  serverUrl: SAME_ORIGIN_URL,
   requiresAuth: false,
-  appBaseUrl: FIREBASE_URL
+  appBaseUrl: SAME_ORIGIN_URL
 });
