@@ -3,6 +3,10 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://raport-k13-9353a.web.app/api/:path*"
+    },
+    {
       "source": "/((?!assets|.*\\..*).*)",
       "destination": "/index.html"
     }
