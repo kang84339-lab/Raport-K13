@@ -1,11 +1,7 @@
 {
   "hosting": {
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
         "source": "/**",
@@ -17,14 +13,7 @@
       }
     ],
     "rewrites": [
-      {
-        "source": "/api/**",
-        "destination": "https://api.base44.com"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+      { "source": "**", "destination": "/index.html" }
     ]
   }
 }
