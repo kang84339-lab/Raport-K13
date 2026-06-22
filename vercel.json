@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://raport-k13-9353a.web.app/api/$1"
+      "source": "/api/:path*",
+      "destination": "/api/base44-proxy?path=/api/:path*"
     },
     {
       "source": "/(.*)",
