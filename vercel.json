@@ -3,15 +3,11 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/api/base44-proxy/:path*",
-      "destination": "/api/base44-proxy.js?path=$1"
+      "source": "/api/(.*)",
+      "destination": "https://raport-k13-9353a.web.app/api/$1"
     },
     {
-      "source": "/api/:path*",
-      "destination": "/api/base44-proxy.js?path=$1"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/((?!assets|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]

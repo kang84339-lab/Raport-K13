@@ -2,15 +2,13 @@ import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion } = appParams;
-
-// Use Vercel local proxy for all Base44 API calls
-const VERCEL_PROXY_BASE = '/api';
+const FIREBASE_PROXY_URL = 'https://raport-k13-9353a.web.app';
 
 export const base44 = createClient({
   appId,
   token,
   functionsVersion,
-  serverUrl: `${VERCEL_PROXY_BASE}`,
+  serverUrl: FIREBASE_PROXY_URL,
   requiresAuth: false,
-  appBaseUrl: `${VERCEL_PROXY_BASE}`
+  appBaseUrl: FIREBASE_PROXY_URL
 });
