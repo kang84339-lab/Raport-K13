@@ -8,12 +8,11 @@ export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
   plugins: [
     base44({
-      // Diaktifkan secara manual (true) agar kode warisan transisi SDK tetap berjalan aman
       legacySDKImports: true,
-      hmrNotifier: false,         // Dimatikan di produksi agar tidak menginterupsi rute aplikasi
-      navigationNotifier: false,  // Dimatikan agar tidak merusak navigasi SPA Vercel
-      analyticsTracker: true,     // Tetap aktif untuk melacak data analitik aplikasi
-      visualEditAgent: false      // Dimatikan saat live agar tidak memicu error visual agent di browser
+      hmrNotifier: false,
+      navigationNotifier: false,
+      analyticsTracker: true,
+      visualEditAgent: false
     }),
     react(),
   ],

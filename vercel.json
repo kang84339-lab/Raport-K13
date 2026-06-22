@@ -1,14 +1,14 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": "https://raport-k13-9353a.web.app/api/:path*"
+      "src": "/api/(.*)",
+      "dest": "https://raport-k13-9353a.web.app/api/$1"
     },
     {
-      "source": "/((?!assets|.*\\..*).*)",
-      "destination": "/index.html"
+      "src": "/[^.]*",
+      "dest": "/index.html"
     }
   ]
 }
