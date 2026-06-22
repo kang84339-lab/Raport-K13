@@ -2,12 +2,12 @@
   "version": 2,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/apps/(.*)", "destination": "https://api.base44.com/api/apps/$1" },
-    { "source": "/api/app-logs/(.*)", "destination": "https://api.base44.com/api/app-logs/$1" },
-    { "source": "/api/api-logs/(.*)", "destination": "https://api.base44.com/api-logs/$1" },
-    { "source": "/api/(.*)", "destination": "https://api.base44.com/api/$1" },
-    { "source": "/app-logs/(.*)", "destination": "https://api.base44.com/app-logs/$1" },
-    { "source": "/apps/(.*)", "destination": "https://api.base44.com/apps/$1" },
+    { "source": "/api/apps/:path*", "destination": "https://api.base44.com/api/apps/:path*" },
+    { "source": "/api/app-logs/:path*", "destination": "https://api.base44.com/api/app-logs/:path*" },
+    { "source": "/api/api-logs/:path*", "destination": "https://api.base44.com/api/api-logs/:path*" },
+    { "source": "/api/:path*", "destination": "https://api.base44.com/api/:path*" },
+    { "source": "/app-logs/:path*", "destination": "https://api.base44.com/app-logs/:path*" },
+    { "source": "/apps/:path*", "destination": "https://api.base44.com/apps/:path*" },
     { "source": "/((?!assets|.*\\..*).*)", "destination": "/index.html" }
   ]
 }
