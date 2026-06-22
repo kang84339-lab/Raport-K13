@@ -8,13 +8,12 @@ export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
   plugins: [
     base44({
-      // Support for legacy code that imports the base44 SDK with @/integrations, @/entities, etc.
-      // can be removed if the code has been updated to use the new SDK imports from @base44/sdk
-      legacySDKImports: process.env.BASE44_LEGACY_SDK_IMPORTS === 'true',
-      hmrNotifier: true,
-      navigationNotifier: true,
-      analyticsTracker: true,
-      visualEditAgent: true
+      // Diaktifkan secara manual (true) agar kode warisan transisi SDK tetap berjalan aman
+      legacySDKImports: true,
+      hmrNotifier: false,         // Dimatikan di produksi agar tidak menginterupsi rute aplikasi
+      navigationNotifier: false,  // Dimatikan agar tidak merusak navigasi SPA Vercel
+      analyticsTracker: true,     // Tetap aktif untuk melacak data analitik aplikasi
+      visualEditAgent: false      // Dimatikan saat live agar tidak memicu error visual agent di browser
     }),
     react(),
   ],
