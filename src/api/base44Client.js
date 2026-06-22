@@ -10,7 +10,7 @@ export const base44 = createClient({
   appId,
   token,
   functionsVersion,
-  serverUrl: VERCEL_PROXY_BASE,
+  serverUrl: `${VERCEL_PROXY_BASE}`,
   requiresAuth: false,
-  appBaseUrl: VERCEL_PROXY_BASE
+  appBaseUrl: `${VERCEL_PROXY_BASE}`
 });

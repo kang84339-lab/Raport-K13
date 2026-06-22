@@ -3,8 +3,12 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/api/base44-proxy/:path*",
+      "destination": "/api/base44-proxy.js?path=$1"
+    },
+    {
       "source": "/api/:path*",
-      "destination": "/api/base44-proxy?path=/api/:path*"
+      "destination": "/api/base44-proxy.js?path=$1"
     },
     {
       "source": "/(.*)",

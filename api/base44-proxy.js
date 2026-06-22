@@ -1,15 +1,15 @@
 export default async function handler(req, res) {
   const url = new URL(req.url, 'http://localhost');
-  const pathFromQuery = url.searchParams.get('path');
-  let path = pathFromQuery || req.url;
-
-  if (path.startsWith('/api/base44-proxy')) {
-    path = path.replace('/api/base44-proxy', '');
-  }
+  const pathFromQuery = url.searchParams.get('path') || '';
+  let path = pathFromQuery;
 
   if (!path.startsWith('/')) {
     path = `/${path}`;
   }
+
+  // Normalize duplicate /api segments from rewrite
+  path = path.replace(/^\/api\//, '/api/');
+  path = path.replace(/^\/api\/api\//, '/api/');
 
   const targetUrl = `https://api.base44.com${path}`;
 
