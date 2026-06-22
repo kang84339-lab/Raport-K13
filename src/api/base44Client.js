@@ -3,8 +3,8 @@ import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion } = appParams;
 
-// Menggunakan domain Firebase Hosting kamu sebagai Reverse Proxy resmi
-const FIREBASE_PROXY_URL = 'https://raport-k13-9353a.web.app'; 
+// Mengarahkan langsung ke sub-folder /api di Firebase agar dibaca oleh aturan rewrites
+const FIREBASE_PROXY_URL = 'https://raport-k13-9353a.web.app/api'; 
 
 export const base44 = createClient({
   appId,
