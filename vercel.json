@@ -2,15 +2,6 @@
   "version": 2,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/apps/:path*", "destination": "https://api.base44.com/api/apps/:path*" },
-    { "source": "/api/app-logs/:path*", "destination": "https://api.base44.com/api/app-logs/:path*" },
-    { "source": "/api/api-logs/:path*", "destination": "https://api.base44.com/api/api-logs/:path*" },
-    { "source": "/api/:path*", "destination": "https://api.base44.com/api/:path*" },
-    { "source": "/app-logs/:path*", "destination": "https://api.base44.com/app-logs/:path*" },
-    { "source": "/apps/:path*", "destination": "https://api.base44.com/apps/:path*" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "source": "/((?!assets|.*\\..*).*)", "destination": "/index.html" }
   ]
 }

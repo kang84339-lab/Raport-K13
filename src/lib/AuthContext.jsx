@@ -1,7 +1,33 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
 import { appParams } from '@/lib/app-params';
-import { createAxiosClient } from '@base44/sdk/dist/utils/axios-client';
+
+// Minimal local stubs to replace Base44 SDK usage so app compiles without external SDK
+const base44 = {
+  auth: {
+    me: async () => null,
+    logout: () => {},
+    redirectToLogin: () => {}
+  }
+};
+
+// Simple axios-like helper using fetch for internal API calls
+const createAxiosClient = ({ baseURL = '', headers = {}, token }) => {
+  return {
+    get: async (path) => {
+      const res = await fetch(`${baseURL}${path}`, {
+        method: 'GET',
+        headers: { ...headers, ...(token ? { Authorization: `Bearer ${token}` } : {}) }
+      });
+      if (!res.ok) {
+        const err = new Error('Request failed');
+        err.status = res.status;
+        try { err.data = await res.json(); } catch {};
+        throw err;
+      }
+      try { return await res.json(); } catch { return null; }
+    }
+  };
+};
 
 const AuthContext = createContext();
 
