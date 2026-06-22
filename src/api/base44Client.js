@@ -3,8 +3,9 @@ import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion } = appParams;
 
-// Mengarahkan langsung ke sub-folder /api di Firebase agar dibaca oleh aturan rewrites
-const FIREBASE_PROXY_URL = 'https://raport-k13-9353a.web.app/api'; 
+// Hapus protokol 'https://' khusus untuk serverUrl jika SDK otomatis menyusunnya,
+// ATAU gunakan URL Firebase polosan tanpa embel-embel apapun.
+const FIREBASE_PROXY_URL = 'https://raport-k13-9353a.web.app';
 
 export const base44 = createClient({
   appId,
@@ -14,4 +15,3 @@ export const base44 = createClient({
   requiresAuth: false,
   appBaseUrl: FIREBASE_PROXY_URL
 });
-// pancing git

@@ -1,16 +1,9 @@
 {
   "version": 2,
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/api/base44-proxy/:path*",
-      "destination": "/api/base44-proxy?path=/api/base44-proxy/:path*"
-    },
-    {
-      "source": "/api/:path*",
-      "destination": "/api/base44-proxy?path=/api/:path*"
-    },
-    {
-      "source": "/((?!api|assets|.*\\..*).*)",
+      "source": "/((?!assets|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]
