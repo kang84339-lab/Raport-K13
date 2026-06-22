@@ -7,7 +7,10 @@
     { "source": "/api/api-logs/:path*", "destination": "https://api.base44.com/api/api-logs/:path*" },
     { "source": "/api/:path*", "destination": "https://api.base44.com/api/:path*" },
     { "source": "/app-logs/:path*", "destination": "https://api.base44.com/app-logs/:path*" },
-    { "source": "/apps/:path*", "destination": "https://api.base44.com/apps/:path*" },
-    { "source": "/((?!assets|.*\\..*).*)", "destination": "/index.html" }
+    { "source": "/apps/:path*", "destination": "https://api.base44.com/apps/:path*" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
